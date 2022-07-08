@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  master:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    container_name: locust_master
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./:/mnt/locust
+    command: >
+      sh -c '
+        java -jar selenium-server-4.0.0-beta-4.jar standalone &
+        locust -f /mnt/locust/locustfile.py --master -H http://master:8089
+      '
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    container_name: locust_worker
+    volumes:
+      - ./:/mnt/locust
+    command: >
+      sh -c '
+        java -jar selenium-server-4.0.0-beta-4.jar standalone &
+        locust -f /mnt/locust/locustfile.py --worker --master-host master
+      '

@@ -1,0 +1,6 @@
+locust
+selenium
+selenium-wire
+requests
+realbrowserlocusts
+Faker
