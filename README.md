@@ -1,3 +1,2 @@
 # Locunium
-LocustのDockerイメージをベースにseleniumをDocker化する．
-
+Locunium × selenium in Docker
