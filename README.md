@@ -1,2 +1,2 @@
 # Locunium
-Locunium × selenium in Docker
+Locust × selenium in Docker
