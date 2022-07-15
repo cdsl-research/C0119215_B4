@@ -20,7 +20,7 @@ from faker import Faker
 import random
 from random import randint
 # CHROMEDRIVER = '/opt/chrome/chromedriver'
-HOST = "http://192.168.100.38:31146"
+HOST = "http://localhost"
 # options = Options()
 # options.add_argument('--headless')  
 # options.add_argument('--no-sandbox')
